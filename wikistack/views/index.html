@@ -3,4 +3,13 @@
 {% block content %}
     <h1>{{title}}</h1>
     <p>Welcome to {{title}}</p>
+    {% if docs.length >0 %}
+      <ul>
+       	 {% for doc in docs %}
+	    <li>{{doc|page_link}}</li>
+	{% endfor %}
+    </ul>
+    {% else %}
+	<li><a href='/add'></a></li>
+    {% endif %}
 {% endblock %}
